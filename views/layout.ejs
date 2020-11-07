@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Auth</title>
+</head>
+<body>
+    <header>
+        <h1>Express Auth</h1>
+        <nav>
+            <ul>
+                <% if(!currentUser) {%> 
+                    <li> <a href="/auth/signup">Sign Up</a></li>
+                    <li> <a href="/auth/login">Log In</a></li>
+                <% }else{ %>
+
+                    <li> <a href="/auth/logout">Log Out</a></li>
+                    <li> <a href="/profile">Profile</a></li>
+
+               <% } %> 
+            </ul>
+        </nav>
+    </header>
+    <%- include('partials/alerts.ejs')%> 
+    <%- body %>
+</body>
+</html>
