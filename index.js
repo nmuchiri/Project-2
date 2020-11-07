@@ -6,6 +6,7 @@ const session= require('express-session')
 const passport= require('./config/ppConfig.js')
 const flash = require('connect-flash')
 const isLoggedIn= require('./middleware/isLoggedIn')
+const axios = require('axios'); 
 
 ////////MIDDLEWARE////////////////////
 // setup ejs and ejs layouts
@@ -57,6 +58,28 @@ res.render('home')
 app.get('/profile', isLoggedIn, (req,res)=>{
     res.render('profile')
 })
+
+
+
+////////////CHARACTERS API/////////
+
+// GET / - main index of site
+app.get('/characters', function(req, res) {
+    // const poetryUrl = 'https://www.poemist.com/api/v1/randompoems';
+    const rickMortyUrl= ' https://rickandmortyapi.com/api/character'
+    // Use request to call the API
+    axios.get(rickMortyUrl).then( function(apiResponse) {
+      const characters = apiResponse.data.results
+      res.render('characters/index', {characters: characters});
+      // res.send(apiResponse.data.results)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  });
+
+
+
 
 app.listen(process.env.PORT, ()=>{
     console.log("Unaskiza spooky sounds za port 8000")
