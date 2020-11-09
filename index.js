@@ -6,7 +6,8 @@ const session= require('express-session')
 const passport= require('./config/ppConfig.js')
 const flash = require('connect-flash')
 const isLoggedIn= require('./middleware/isLoggedIn')
-const axios = require('axios'); 
+const axios = require('axios') 
+let db= require ('./models')
 
 ////////MIDDLEWARE////////////////////
 // setup ejs and ejs layouts
@@ -45,6 +46,7 @@ app.use ((req,res, next)=>{
 })
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
+app.use('/characters', require('./controllers/characters'))
 
 
 ///////////////////MIDDLE WARE////////////////////
@@ -65,7 +67,6 @@ app.get('/profile', isLoggedIn, (req,res)=>{
 
 // GET / - main index of site
 app.get('/characters', function(req, res) {
-    // const poetryUrl = 'https://www.poemist.com/api/v1/randompoems';
     const rickMortyUrl= ' https://rickandmortyapi.com/api/character'
     // Use request to call the API
     axios.get(rickMortyUrl).then( function(apiResponse) {
@@ -78,6 +79,19 @@ app.get('/characters', function(req, res) {
     })
   });
 
+
+
+  app.get('/faves', function(req, res) {
+     // TODO: Get all records from the DB and render to view
+    db.character.findAll()
+    .then(favorites =>{
+      console.log(favorites)
+        res.render('characters/faves', {favorites: favorites})
+    })
+    .catch((error) => {
+      console.log(error)
+    }) 
+  })
 
 
 
