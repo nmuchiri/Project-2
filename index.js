@@ -8,6 +8,8 @@ const flash = require('connect-flash')
 const isLoggedIn= require('./middleware/isLoggedIn')
 const axios = require('axios') 
 let db= require ('./models')
+// const character = require('./models/character.js')
+// const user = require('./models/user.js')
 
 ////////MIDDLEWARE////////////////////
 // setup ejs and ejs layouts
@@ -65,33 +67,66 @@ app.get('/profile', isLoggedIn, (req,res)=>{
 
 ////////////CHARACTERS API/////////
 
-// GET / - main index of site
-app.get('/characters', function(req, res) {
-    const rickMortyUrl= ' https://rickandmortyapi.com/api/character'
-    // Use request to call the API
-    axios.get(rickMortyUrl).then( function(apiResponse) {
-      const characters = apiResponse.data.results
-      res.render('characters/index', {characters: characters});
-      // res.send(apiResponse.data.results)
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
-  });
+// // GET / - main index of site
+// app.get('/characters', function(req, res) {
+//     const rickMortyUrl= ' https://rickandmortyapi.com/api/character'
+//     // Use request to call the API
+//     axios.get(rickMortyUrl).then( function(apiResponse) {
+//       const characters = apiResponse.data.results
+//       res.render('characters/index', {characters: characters});
+//       // res.send(apiResponse.data.results)
+//     })
+//     .catch((err)=>{
+//       console.log(err)
+//     })
+//   });
+
+
+// POST /characters - receive the name of a character and add it to the database
+// app.post('/characters', function(req, res) {
+//   // TODO: Get form data and add a new record to DB
+  
+//   db.character.findOrCreate({
+//         where:{name: req.body.character
+         
+          
+//         }
+        
+//     })
+//     console.log(req.body.character)
+//     .then(([foundOrCreatedUser, created])=>{
+
+
+//     res.redirect('/characters')        
+//     })
+// });
 
 
 
-  app.get('/faves', function(req, res) {
-     // TODO: Get all records from the DB and render to view
-    db.character.findAll()
-    .then(favorites =>{
-      console.log(favorites)
-        res.render('characters/faves', {favorites: favorites})
-    })
-    .catch((error) => {
-      console.log(error)
-    }) 
-  })
+  // app.get('/characters/faves', function(req, res) {
+  //    // TODO: Get all records from the DB and render to view
+  //   db.character.findAll()
+  //   .then(favorites =>{
+  //     console.log(favorites)
+  //       res.render('characters/faves', {favorites: favorites})
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   }) 
+  // })
+
+  // app.get('/characters/:id', (req, res) => {
+  //   db.character.findOne({
+  //     where: { id: req.params.id }
+  //   })
+  //   .then((character) => {
+  //     console.log(character)
+  //     res.render('characters/show', {character: character })
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   })
+  // })
 
 
 

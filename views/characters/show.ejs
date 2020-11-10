@@ -1,0 +1,10 @@
+<h1>Info about this character:<%=character.name%> </h1>
+<img src="<%=character.image %>" width=300>
+<br>
+<h2><%= character.status%></h2>
+<br>
+Location: <h2><%= character.location %></h2>
+<br>
+<form method="POST" action="/characters">
+    <input type="hidden" name="title" value=<%=character.id%>">
+</form>

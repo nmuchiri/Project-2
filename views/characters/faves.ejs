@@ -1,11 +1,19 @@
-<h1>Here are your favorite Rick and Morty Characters</h1>
+<h1>Here are your favorite Rick & Morty Characters</h1>
 <div>
-    <%favorites.forEach(favoritePoke=>{%>
-        <li>
-        <%=favoritePoke.name %>
-        <form method="POST" action="/pokemon/<%=favoritePoke.id%>/?_method=DELETE">
+<%favorites.forEach(favoriteChar=>{%>
+    <li>
+       Image: <img src="<%= favoriteChar.image %>" width=300>
+        <br>
+       Name: <%=favoriteChar.name %>
+       <br>
+        Character's Id: <%=favoriteChar.id %>
+       <br>
+       Episodes: <%=favoriteChar.episodes %>
+       <br>
+       Location:<%=favoriteChar.location %>
+        <form method="POST" action="/faves/<%=favoriteChar.id%>/?_method=DELETE">
             <input type="submit" value="Delete">
         </form>
     </li>
-    </div>
-    <%})%>  
+<%})%>
+</div>

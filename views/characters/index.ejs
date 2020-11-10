@@ -1,11 +1,13 @@
 <h1>Indulge your RickMorty sense</h1>
 
-<% characters.forEach(function(character) { %>
+<% characters.results.forEach(function(character) { %>
      <div class="well">
        <h2><%= character.name %></h2>
-       <form method="POST" action="/">
+       <form method="POST" action="/characters">
          <input hidden type="text" name="name" value="<%= character.name %>">
-         <button class="btn btn-primary" type="submit"><a href="/faves">Add to Favorite character</a></button>
+         <input hidden type="text" name="location" value="<%= character.location.name %>">
+         <img src="<%= character.image %>" width=300>
+         <button class="btn btn-primary" type="submit">Add to Favorite Character</button>
        </form>
      </div>
-   <% }); %>
+   <% }); %></q>
