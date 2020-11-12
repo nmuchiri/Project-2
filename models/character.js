@@ -11,14 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.character.hasMany(models.note)
       models.character.belongsToMany(models.user, {through: 'CharacterUser'})
     }
   };
   character.init({
     name: DataTypes.STRING,
     location: DataTypes.STRING,
-    // apiId: DataTypes.INTEGER,
-    // episodes: DataTypes.ARRAY(DataTypes.STRING)
+    image: DataTypes.STRING,
+    episode: DataTypes.ARRAY(DataTypes.STRING)
   }, {
     sequelize,
     modelName: 'character',

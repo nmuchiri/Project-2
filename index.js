@@ -49,6 +49,7 @@ app.use ((req,res, next)=>{
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/characters', require('./controllers/characters'))
+app.use('/notes', require('./controllers/notes'))
 
 
 ///////////////////MIDDLE WARE////////////////////

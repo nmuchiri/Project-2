@@ -6,6 +6,8 @@
        <form method="POST" action="/characters">
          <input hidden type="text" name="name" value="<%= character.name %>">
          <input hidden type="text" name="location" value="<%= character.location.name %>">
+         <input hidden type="text" name="image" value="<%= character.image %>">
+         <input hidden type="text" name="episode" value="<%= character.episode %>">
          <img src="<%= character.image %>" width=300>
          <button class="btn btn-primary" type="submit">Add to Favorite Character</button>
        </form>

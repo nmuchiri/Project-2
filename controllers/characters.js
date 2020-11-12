@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
       const characters = apiResponse.data
       
       res.render('characters/index', {characters: characters});
-      // res.send(apiResponse.data)
+      // res.send(characters)
     })
     .catch((err)=>{
       console.log(err)
@@ -36,7 +36,8 @@ router.get('/', function(req, res) {
       //    console.log(favoriteChar.image)  
       //      console.log(favoriteChar.name)
       // })
-      console.log(favorites)
+      // 
+      
         res.render('characters/faves', {favorites: favorites})
 
     //   res.render('faves')
@@ -50,19 +51,21 @@ router.get('/', function(req, res) {
 /////////// ADDING CHARACTERS TO DATABASE///////////
 
 router.post('/',(req, res)=>{
-  console.log(req.body.apiId)
+let episode= [req.body.episode]
+// console.log("@@@@@@@@@@@@@@@@@@@@",arr[0])
   db.character.findOrCreate({
         where:{
           name: req.body.name,
           location: req.body.location,
-          image: req.body.image
+          image: req.body.image,
+          episode: episode
         }  
     })
     .then(([foundOrCreatedChar, created])=>{
       req.user.addCharacter(foundOrCreatedChar)
       .then(newAssociation=>{
         console.log(newAssociation)
-        res.redirect('/')  
+        res.redirect('/characters')  
       }) 
       .catch((error) => {
         console.log(error)
@@ -89,11 +92,16 @@ router.get('/:id', (req, res) => {
 
 ///////////DELETE CHARACTERS////////////
 router.delete('/:id' , (req, res)=>{
-  console.log(req.params.id)
+  console.log('@@@@@@@@@@@@@@@', 'fire')
+  console.log("@@@@@@@@@@@@", req.params.id)
   db.character.destroy({
-    where: {id: req.params.id}
+    where: {id: req.params.id
+    }
   }).then(()=>{
     res.redirect('/faves')
+  })
+  .catch((error) => {
+    console.log(error)
   })
 })
 
