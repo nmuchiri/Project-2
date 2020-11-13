@@ -65,7 +65,7 @@ let episode= [req.body.episode]
       req.user.addCharacter(foundOrCreatedChar)
       .then(newAssociation=>{
         console.log(newAssociation)
-        res.redirect('/characters')  
+        res.redirect('/characters/faves')  
       }) 
       .catch((error) => {
         console.log(error)

@@ -4,15 +4,14 @@ let router = express.Router()
 
 
 router.post('/', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     db.note.create({
-      content: req.body.content,
-      characterId: req.body.characterId
-  
+        content: req.body.content,
+      characterId: req.body.characterId 
     })
     .then((createdNote) => {
     //   console.log('@@@@@@@@@@@@@@@@@@@@',createdNote)
-      res.render('notes/index', {createdNote: createdNote})
+      res.render('notes/index', {createdNote: createdNote.dataValues})
     //   res.send("A page with notes about characters")
     })
     .catch((error) => {
@@ -45,12 +44,13 @@ router.post('/', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-  db.notes.findAll({
+  db.note.findOne({
     where:{id: req.params.id},
-    include: [db.characters]
+    include: [db.character]
   })
-  .then((comments) => {
-    res.render('comments/show', { comment: comment })
+  .then((notes) => {
+      console.log('@@@@@@@@@@@@@@@', notes)
+    res.render('notes/show', { notes: notes.dataValues })
   })
   
   .catch((error) => {
