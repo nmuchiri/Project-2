@@ -1,3 +1,7 @@
 <h1>Notes about characters </h1>
 
 <%= createdNote.content %> 
+
+<form method="POST" action="/notes/<%=createdNote.content%>/?_method=DELETE">
+    <input type="submit" value="Delete">
+</form>

@@ -21,24 +21,17 @@ router.get('/', function(req, res) {
     })
   })
 
-
-
-
-
   //////RENDER FAVES PAGE
 
   // Take one to YOUR FAVE CHARACTERS page
   router.get('/faves', function(req, res) {
     // TODO: Get all records from the DB and render to view
-    db.character.findAll()
-    .then(favorites =>{
-      // favorites.forEach(favoriteChar=>{
-      //    console.log(favoriteChar.image)  
-      //      console.log(favoriteChar.name)
-      // })
-      // 
+    db.user.findOne({ where: { id: req.user.id}, include: [db.character]})
+
+    .then(user =>{
+      console.log(user.characters)
       
-        res.render('characters/faves', {favorites: favorites})
+        res.render('characters/faves', {favorites: user.characters})
 
     //   res.render('faves')
       // res.send('Render a page of favorites here');
@@ -91,17 +84,16 @@ router.get('/:id', (req, res) => {
   })
 
 ///////////DELETE CHARACTERS////////////
-router.delete('/:id' , (req, res)=>{
-  console.log('@@@@@@@@@@@@@@@', 'fire')
-  console.log("@@@@@@@@@@@@", req.params.id)
-  db.character.destroy({
-    where: {id: req.params.id
-    }
-  }).then(()=>{
-    res.redirect('/faves')
+router.delete('/:id', (req, res)=>{
+  db.character.destroy ({
+    where: {id:req.params.id}
   })
-  .catch((error) => {
-    console.log(error)
+  .then(numRowsDeleted=>{
+    console.log(numRowsDeleted)
+    res.redirect('/characters/faves')  
+  })
+  .catch(err=>{
+    res.send(err)
   })
 })
 
