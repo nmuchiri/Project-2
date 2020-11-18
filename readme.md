@@ -57,6 +57,36 @@
      7. run 'nodemon' to start app
 
 
+#RICK & MORTY 
+
+### ERD
+
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/d43b22ac-74c9-4d46-b22a-f3a8b038c847" id="-XMOk~0yhA_o"></iframe></div>
+
+
+----------------------------------------------------------
+### User Stories
+
+The user will either sign up to create a new profile or log in to an already existing account. They will be directed to the home page with all characters where they can choose their favorite character. When they click on their profile, they will be able to view all their favorite characters. They will be able to delete any character they've favorited from their profile. 
+
+The user will also be able to write notes about their favorite characters. 
+
+----------------------------------------------------------
+### Wireframes
+
+<img src= "">
+
+
+
+----------------------------------------------------------
+
+Make a PR when you're done!
+
+
+
+
+
+
 
     
 

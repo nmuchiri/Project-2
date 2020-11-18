@@ -2,7 +2,7 @@ let express = require ('express')
 let db= require ('../models')
 let router = express.Router()
 const axios = require('axios') 
-const character = require('../models/character')
+// const isLoggedIn= require('./middleware/isLoggedIn')
 
 ////////PAGE WITH ALL CHARACTERS///////////
 
@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
   //////RENDER FAVES PAGE
 
   // Take one to YOUR FAVE CHARACTERS page
-  router.get('/faves', function(req, res) {
+  router.get('/faves',function(req, res) {
     // TODO: Get all records from the DB and render to view
     db.user.findOne({ where: { id: req.user.id}, include: [db.character]})
 
@@ -68,7 +68,7 @@ let episode= [req.body.episode]
 
 ///////CHARACTERS SHOW PAGE///////////
 
-router.get('/:id', (req, res) => {
+router.get('/:id',(req, res) => {
     db.character.findOne({
       where: { 
         id: req.params.id
@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
   })
 
 ///////////DELETE CHARACTERS////////////
-router.delete('/:id', (req, res)=>{
+router.delete('/:id',(req, res)=>{
   db.character.destroy ({
     where: {id:req.params.id}
   })

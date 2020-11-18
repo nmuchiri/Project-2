@@ -10,13 +10,48 @@
     width:100vw; 
         
 }
-   /* .nav {
-    /* text-align: center; */
-       /* background-color: aqua;
-       height: 50px;
 
-   } */ */
-   .home-heading {
+   .home-heading { 
     text-align: center;
     display: flex;
-   }
+   } 
+   ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+    }
+
+    li {
+      float: left;
+    }
+    
+    a {
+      display: block;
+      padding: 8px;
+      background-color: #dddddd;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.3);
+      width:100vw;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+.nav-item {
+  padding: 10px;
+  justify-content: flex-end;
+}
+ .home-heading{
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+ }
+ .form {
+   width: fit-content;
+   height: fit-content;
+ }
