@@ -74,13 +74,12 @@ The user will also be able to write notes about their favorite characters.
 ----------------------------------------------------------
 ### Wireframes
 
-<img src="https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5">
-
-
+![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5")
+![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/a4d9d15c9")
+![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/aa44769b5")
 
 ----------------------------------------------------------
 
-Make a PR when you're done!
 
 
 
