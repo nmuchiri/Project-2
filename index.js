@@ -51,8 +51,8 @@ app.use ((req,res, next)=>{
 })
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
-app.use('/characters', require('./controllers/characters'))
-app.use('/notes', require('./controllers/notes'))
+app.use('/characters',isLoggedIn, require('./controllers/characters'))
+app.use('/notes', isLoggedIn, require('./controllers/notes'))
 
 
 ///////////////////MIDDLE WARE////////////////////
@@ -68,6 +68,6 @@ app.get('/profile', isLoggedIn, (req,res)=>{
 })
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 8000, ()=>{
     console.log("Unaskiza spooky sounds za port 8000")
 })

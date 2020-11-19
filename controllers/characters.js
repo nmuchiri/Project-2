@@ -2,7 +2,7 @@ let express = require ('express')
 let db= require ('../models')
 let router = express.Router()
 const axios = require('axios') 
-// const isLoggedIn= require('./middleware/isLoggedIn')
+const isLoggedIn= require('../middleware/isLoggedIn')
 
 ////////PAGE WITH ALL CHARACTERS///////////
 
@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
   //////RENDER FAVES PAGE
 
   // Take one to YOUR FAVE CHARACTERS page
-  router.get('/faves',function(req, res) {
+  router.get('/faves',isLoggedIn, function(req, res) {
     // TODO: Get all records from the DB and render to view
     db.user.findOne({ where: { id: req.user.id}, include: [db.character]})
 

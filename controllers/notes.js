@@ -1,7 +1,7 @@
 let express = require('express')
 let db = require('../models')
 let router = express.Router()
-// const isLoggedIn= require('./middleware/isLoggedIn')
+const isLoggedIn= require('../middleware/isLoggedIn')
 
 
 
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 
 
 
-router.post('/', (req, res) => {
+router.post('/', isLoggedIn, (req, res) => {
     // console.log(req.body)
     db.note.create({
         content: req.body.content,

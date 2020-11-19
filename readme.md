@@ -74,7 +74,7 @@ The user will also be able to write notes about their favorite characters.
 ----------------------------------------------------------
 ### Wireframes
 
-<img src= "https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5">
+<img src="https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5">
 
 
 
