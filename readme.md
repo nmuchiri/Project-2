@@ -74,8 +74,11 @@ The user will also be able to write notes about their favorite characters.
 ----------------------------------------------------------
 ### Wireframes
 <p align= "center">
+home page
 <img src= "Rick__Morty 2/Home.png">
+characters page
 <img src = "Rick__Morty 2/Characters.png">
+favorites page
 <img src= "Rick__Morty 2/Favorites.png">
 </p>
 ----------------------------------------------------------
