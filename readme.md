@@ -82,10 +82,6 @@ The user will also be able to write notes about their favorite characters.
     characters page
     <img src = "Rick__Morty 2/Characters.png">
   </div>
-  <div>
-    favorites page
-    <img src= "Rick__Morty 2/Favorites.png">
- </div>
 ----------------------------------------------------------
 
 
