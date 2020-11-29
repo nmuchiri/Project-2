@@ -74,9 +74,9 @@ The user will also be able to write notes about their favorite characters.
 ----------------------------------------------------------
 ### Wireframes
 <p align= "center">
-<img src= "https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5">
-<img src = "https://app.moqups.com/t5VBPubf3h/edit/page/a4d9d15c9">
-<img src= "https://app.moqups.com/t5VBPubf3h/edit/page/aa44769b5">
+<img src= "Rick__Morty 2/Home.png">
+<img src = "Rick__Morty 2/Characters.png">
+<img src= "Rick__Morty 2/Favorites.png">
 </p>
 ----------------------------------------------------------
 
