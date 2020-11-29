@@ -58,3 +58,10 @@
  .auth{
    background-image: url("https://cdn.hipwallpaper.com/i/56/3/o2iEmS.jpg");
  }
+ .characters {
+   display: flex;
+   flex-direction: column;
+ }
+ .well{
+   text-align: center;
+ }

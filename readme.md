@@ -61,7 +61,7 @@
 
 ### ERD
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/d43b22ac-74c9-4d46-b22a-f3a8b038c847" id="-XMOk~0yhA_o"></iframe></div>
+<img src = "https://lucid.app/lucidchart/d43b22ac-74c9-4d46-b22a-f3a8b038c847/view?page=0_0#?folder_id=home&browser=icon">
 
 
 ----------------------------------------------------------
@@ -73,11 +73,11 @@ The user will also be able to write notes about their favorite characters.
 
 ----------------------------------------------------------
 ### Wireframes
-
-![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5")
-![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/a4d9d15c9")
-![Alt text]("https://app.moqups.com/t5VBPubf3h/edit/page/aa44769b5")
-
+<p align= "center">
+<img src= "https://app.moqups.com/t5VBPubf3h/edit/page/ad64222d5">
+<img src = "https://app.moqups.com/t5VBPubf3h/edit/page/a4d9d15c9">
+<img src= "https://app.moqups.com/t5VBPubf3h/edit/page/aa44769b5">
+</p>
 ----------------------------------------------------------
 
 

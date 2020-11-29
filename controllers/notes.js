@@ -6,9 +6,10 @@ const isLoggedIn= require('../middleware/isLoggedIn')
 
 
 router.get('/', (req, res) => {
-    db.user.findOne({
-      where:{id: req.user.id},
-      include: [db.note]
+    db.note.findAll({
+      where:{userId: req.user.id},/// find notes where the user id is this user and the character is is this character
+      //// do an and statement in the query 
+      include: [db.character]
     })
     .then((user) => {
         console.log('@@@@@@@@@@@@@@@', user)
@@ -39,10 +40,11 @@ router.get('/', (req, res) => {
 
 
 router.post('/', isLoggedIn, (req, res) => {
-    // console.log(req.body)
+    console.log(req.user)
     db.note.create({
         content: req.body.content,
         characterId: req.body.characterId,
+        userId: req.user.id
     })
     .then((createdNote) => {
       console.log(createdNote)
