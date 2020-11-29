@@ -59,6 +59,8 @@
 
 # RICK & MORTY 
 
+App link: https://rickandmortyshowapp.herokuapp.com/
+
 ### ERD
 
 <img src = "Project 2 readme ERD.svg">
