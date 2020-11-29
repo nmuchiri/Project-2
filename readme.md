@@ -73,7 +73,14 @@ The user will also be able to write notes about their favorite characters.
 
 ----------------------------------------------------------
 ### Wireframes
+<<<<<<< HEAD
 <img src= "Project 2 wireframe.png">
+=======
+
+![](Home.png)
+![](Characters.png)
+![](Favorites.png)
+>>>>>>> 7193e4d3be785fc5665ff0936f561dd6cd1ffc60
 
 ----------------------------------------------------------
 
