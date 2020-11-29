@@ -57,13 +57,17 @@
      7. run 'nodemon' to start app
 
 
-#RICK & MORTY 
+# RICK & MORTY 
 
 ### ERD
 
 <img src = "Project 2 readme ERD.svg">
 
+There is a many to many relationship between user model and character model through the join table character user. 
+There is a one to many relationship between the user model and the notes model
 
+
+website used: lucid app
 ----------------------------------------------------------
 ### User Stories
 
@@ -72,10 +76,38 @@ The user will either sign up to create a new profile or log in to an already exi
 The user will also be able to write notes about their favorite characters. 
 
 ----------------------------------------------------------
-### Wireframes
+### Wireframe
 <img src= "Project 2 wireframe.png">
-
+ 
+website used: lucid app
 ----------------------------------------------------------
+
+### Technologies Used
+
+Node/Express & Axios
+Passport/ Bcrypt for authentification and password hashing.
+Postgres
+Sequelize
+CSS, HTML & JavaScript
+
+### Routes and Models
+
+|CRUD           | ROUTE           |   FUNCTION                        |
+| :------------ |:---------------:|     -----:                        |    
+| GET           | /               | HOME PAGE                         |
+| GET           | /AUTH/LOGIN     | LOGIN PAGE                        | 
+| POST          | /AUTH/LOGIN     | SIGN IN  EXISTING USER            |
+| GET           | /AUTH/SIGNUP    | SIGN UP PAGE                      |
+| POST          | /AUTH/LOGOUT    | LOG OUT USER                      |
+| GET           | /PROFILE        | SHOWS LOGGED IN USER              |
+| GET           | /CHARACTERS     | PAGE WITH ALL CHARACTERS          |
+| POST          | /CHARACTERS     | ADDS CHARACTERS TO DATABASE       |
+| GET           | /CHARACTERS/FAVES| SHOWS ALL FAVORITED CHARACTERS   |
+| GET           | /CHARACTERS/:ID | SHOWS A FAVORITED CHARACTER & INFO|
+| DELETE        | /CHARACTERS/:ID | REMOVES CHARACTER FROM DATABASE   |   
+| GET           | /NOTES          | SHOWS ALL WRITTEN NOTES           |
+| POST          | /NOTES          | ADDS NOTES TO DATABASE            |
+| PUT           | /NOTES/:ID      | ALLOWS USER TO UPDATE NOTES       | 
 
 
 
