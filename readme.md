@@ -74,9 +74,9 @@ The user will also be able to write notes about their favorite characters.
 ----------------------------------------------------------
 ### Wireframes
 
-![Home Page](Rick__Morty 2/Home.png)
-![Characters Page](Rick__Morty 2/Characters.png)
-![Favorites Page](Rick__Morty 2/Favorites.png)
+![](Home.png)
+![](Characters.png)
+![](Favorites.png)
 
 ----------------------------------------------------------
 
