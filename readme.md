@@ -61,7 +61,7 @@
 
 ### ERD
 
-<img src = "https://lucid.app/lucidchart/d43b22ac-74c9-4d46-b22a-f3a8b038c847/view?page=0_0#?folder_id=home&browser=icon">
+<img src = "Project 2 readme ERD.svg">
 
 
 ----------------------------------------------------------
