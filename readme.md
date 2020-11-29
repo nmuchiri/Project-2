@@ -87,9 +87,13 @@ website used: lucid app
 ### Technologies Used
 
 *Node/Express & Axios
-*Passport/ Bcrypt for authentification and password hashing.
+
+*Passport/ Bcrypt for authentification and password hashing
+
 *Postgres
+
 *Sequelize
+
 *CSS, HTML & JavaScript
 
 ### Routes and Models
