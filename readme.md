@@ -116,6 +116,14 @@ website used: lucid app
 | PUT           | /NOTES/:ID      | ALLOWS USER TO UPDATE NOTES       | 
 
 
+### Sources
+API info:
+
+https://rickandmortyapi.com/
+
+
+
+
 
 
 

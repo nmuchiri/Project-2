@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
       //// do an and statement in the query 
       include: [db.character]
     })
-    .then((user) => {
-        console.log('@@@@@@@@@@@@@@@', user)
-      res.render('notes/show', { user: user })
+    .then((note) => {
+        console.log('@@@@@@@@@@@@@@@', note)
+      res.render('notes/index', { note: note })
     })
     
     .catch((error) => {
@@ -48,7 +48,8 @@ router.post('/', isLoggedIn, (req, res) => {
     })
     .then((createdNote) => {
       console.log(createdNote)
-      res.render('notes/index', {createdNote: createdNote.dataValues})
+      // res.render('notes/show', {createdNote: createdNote.dataValues})
+      res.redirect('/notes')
     })
     .catch((error) => {
         console.log(error)
@@ -70,16 +71,16 @@ router.post('/', isLoggedIn, (req, res) => {
 //   })
   
 router.put('/:id',(req, res) => {
-  console.log('@@@@@@@@@@@@@@@', req.body.note)
-  console.log('@@@@@@@@@@@@@@@', req.params.id)
+  console.log('##############', req.body.note)
+  console.log('#################', req.params.id)
     db.note.update(
          {note: req.body.note},
          {where: {id: req.params.id}}
       )
-      .then((newNote) => {
-        console.log("This is my comment", newNote)
+      .then(() => {
+        // console.log("This is my comment", newNote)
         // newComment.
-        res.redirect(`/notes`)
+        res.redirect('/notes')
       })
       .catch((err) => {
         res.send(err)
