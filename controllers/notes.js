@@ -7,7 +7,7 @@ const isLoggedIn= require('../middleware/isLoggedIn')
 
 router.get('/', (req, res) => {
     db.note.findAll({
-      where:{userId: req.user.id},/// find notes where the user id is this user and the character is is this character
+      where:{userId: req.user.id},/// find notes where the user id is this user and the character is this character
       //// do an and statement in the query 
       include: [db.character]
     })
@@ -47,7 +47,7 @@ router.post('/', isLoggedIn, (req, res) => {
         userId: req.user.id
     })
     .then((createdNote) => {
-      console.log(createdNote)
+      console.log("######################", createdNote)
       // res.render('notes/show', {createdNote: createdNote.dataValues})
       res.redirect('/notes')
     })
@@ -78,9 +78,8 @@ router.put('/:id',(req, res) => {
          {where: {id: req.params.id}}
       )
       .then(() => {
-        // console.log("This is my comment", newNote)
-        // newComment.
-        res.redirect('/notes')
+
+        res.render('notes/index', { note: note })
       })
       .catch((err) => {
         res.send(err)

@@ -4,10 +4,10 @@
     <li>
         <%=n.content %>
         <form method= "POST" action="/notes/:id/?_method=PUT">
-            <input type="text" name="note">
+            <input type="hidden" name="note">
             <input type="hidden" value= "<%= n.id %>">
             <button >Edit this note</button>
-        </form>
+       
     </li>
 <% }) %>
 
