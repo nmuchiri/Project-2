@@ -43,6 +43,7 @@ router.post('/', isLoggedIn, (req, res) => {
         userId: req.user.id
     })
     .then((createdNote) => {
+      console.log("************************",createdNote)
       // res.render('notes/show', {createdNote: createdNote.dataValues})
       res.redirect('/notes')
     })
