@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
       include: [db.character]
     })
     .then((note) => {
-        console.log('@@@@@@@@@@@@@@@', note)
       res.render('notes/index', { note: note })
     })
     
@@ -23,31 +22,27 @@ router.get('/', (req, res) => {
 
 
 
-// router.get('/:id', (req, res) => {
-//     console.log('/////////////', req.note.id)
-//     db.note.findOne({
-//       where: { id: req.note.id}, include: [db.character]
-//     })
-//     .then((foundNote) => {
-//       console.log(foundNote.character)
-//       res.render('notes/show', {foundNote:foundNote.character })
-//     })
-//     .catch((error) => {
-//       console.log(error)
-//     })
-//   })
+router.get('/:id/edit', isLoggedIn, (req, res) => {
+    db.note.findOne({
+      where: { id: req.params.id}, include: [db.character]
+    })
+    .then((foundNote) => {
+      res.render('notes/edit', {foundNote: foundNote.dataValues})
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  })
 
 
 
 router.post('/', isLoggedIn, (req, res) => {
-    console.log(req.user)
     db.note.create({
         content: req.body.content,
         characterId: req.body.characterId,
         userId: req.user.id
     })
     .then((createdNote) => {
-      console.log("######################", createdNote)
       // res.render('notes/show', {createdNote: createdNote.dataValues})
       res.redirect('/notes')
     })
@@ -57,33 +52,27 @@ router.post('/', isLoggedIn, (req, res) => {
   })
 
 
-//   router.delete('/:id', (req, res)=>{
-//     db.note.destroy ({
-//       where: {id:req.params.id}
-//     })
-//     .then(numRowsDeleted=>{
-//       console.log(numRowsDeleted)
-//       res.redirect('/characters/faves')  
-//     })
-//     .catch(err=>{
-//       res.send(err)
-//     })
-//   })
+  router.delete('/:id', (req, res)=>{
+    db.note.destroy ({
+      where: {id:req.params.id}
+    })
+    .then(numRowsDeleted=>{
+      console.log(numRowsDeleted)
+      res.redirect('/notes')  
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+  })
   
 router.put('/:id',(req, res) => {
   console.log('##############', req.body.note)
   console.log('#################', req.params.id)
     db.note.update(
-         {note: req.body.note},
+         {content: req.body.note},
          {where: {id: req.params.id}}
       )
-      .then(() => {
-
-        res.render('notes/index', { note: note })
-      })
-      .catch((err) => {
-        res.send(err)
-      })
+      res.redirect('/notes')
   })
 
 

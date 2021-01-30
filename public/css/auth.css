@@ -1,0 +1,12 @@
+body {
+    background-image:url("https://static.onecms.io/wp-content/uploads/sites/6/2019/11/rick-and-morty-season-4-2000.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    width:100vw; 
+        
+}

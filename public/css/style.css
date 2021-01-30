@@ -11,10 +11,6 @@
         
 }
 
-   .home-heading { 
-    text-align: center;
-    display: flex;
-   } 
    ul {
       list-style-type: none;
       margin: 0;
@@ -46,22 +42,14 @@
   padding: 10px;
   justify-content: flex-end;
 }
- .home-heading{
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
- }
+h1, h2{
+  padding: 10px;
+  color: purple;
+}
+
  .form {
    width: fit-content;
    height: fit-content;
  }
- .auth{
-   background-image: url("https://cdn.hipwallpaper.com/i/56/3/o2iEmS.jpg");
- }
- .characters {
-   display: flex;
-   flex-direction: column;
- }
- .well{
-   text-align: center;
- }
+ 
+ 

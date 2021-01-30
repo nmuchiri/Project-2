@@ -1,0 +1,32 @@
+ /* .container{
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+} */
+
+.notes{
+    background-color: purple;
+    display:flex; 
+    flex-direction: column; 
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+    
+
+    
+}
+.notes-button{ 
+    display: flex; 
+    padding: 10px 5px;
+    width: 100%;
+    /* justify-content: space-between; */
+    
+} 
+
+form > input { 
+    justify-content: space-between;
+    background-color: red;
+    margin-left: 115px;
+}
+

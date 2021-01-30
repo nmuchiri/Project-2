@@ -1,14 +1,20 @@
-<h1>Notes about characters </h1>
+<h1>Notes About Characters </h1>
+<div class= "notes">
+    <% note.forEach(n=> { %>
+        <li>
+            <%=n.content %>
+            <div class="notes-button">
+                <form method= "GET" action="/notes/<%= n.id %>/edit">
+                    <input type="submit" value="Edit"  class= "edit"/>
+                </form>
+                <form method="POST" action="/notes/<%=n.id%>/?_method=DELETE">
+                    <input type="submit" value="Delete" class= "delete">  
+                </form>
+            </div>
+        </li>
+    <% }) %>
 
-<% note.forEach(n=> { %>
-    <li>
-        <%=n.content %>
-        <form method= "POST" action="/notes/:id/?_method=PUT">
-            <input type="hidden" name="note">
-            <input type="hidden" value= "<%= n.id %>">
-            <button >Edit this note</button>
-       
-    </li>
-<% }) %>
+</div>
+
 
 <a href="/characters/faves">Return to Favorited Characters</a>

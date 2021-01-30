@@ -1,25 +1,26 @@
-<h1>Here are your favorite Rick & Morty Characters</h1>
-<div>
-<%favorites.map(favoriteChar=>{%>
-    <li>
-    <img src="<%= favoriteChar.image %>" width=300>
-        <br>
-       Name: <%=favoriteChar.name %>
-       <br>
-        Character's Id: <%=favoriteChar.id %>
-       <br>
-       Episodes:<div class="d-flex flex-column"> <%= favoriteChar.episode %> </div>
-        <br>
-       Location:<%=favoriteChar.location %>
-        <form method="POST" action="/characters/<%=favoriteChar.id%>/?_method=DELETE">
-            <input type="submit" value="Delete">  
-        </form>
-        <form action="/notes" method="POST">
-            <div class="form-group">
-              <label for="notes">Write a note</label>
-              <input type="text" class="form" id="content" name="content" required>
-              <input type="hidden" name="characterId" value="<%=favoriteChar.id%>">
-            <input type="submit" class="btn btn-primary">
+<h1> Your Favorite Rick & Morty Characters</h1>
+<div class='characters'>
+    <div>
+        <%favorites.map(favoriteChar=>{%>
+            <li>
+            <img src="<%= favoriteChar.image %>" width=300>
+                <br>
+            Name: <%=favoriteChar.name %>
+            <br>
+                Character's Id: <%=favoriteChar.id %>
+            <br>
+            Location:<%=favoriteChar.location %>
+                <form method="POST" action="/characters/<%=favoriteChar.id%>/?_method=DELETE">
+                    <input type="submit" value="Delete Character">  
+                </form>
+    </div>
+        <div>
+            <form action="/notes" method="POST">
+                <div class="form-group">
+                <label for="notes">Write a note</label>
+                <textarea name="character-note"></textarea>
+                <input type="hidden" name="characterId" value="<%=favoriteChar.id%>">
+                <input type="submit" class="btn btn-primary">
         </div>
     </li>
 <%})%>

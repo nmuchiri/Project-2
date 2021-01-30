@@ -1,0 +1,6 @@
+<h1>Edit notes here</h1>
+
+<form method= "POST" action="/notes/<%=foundNote.id%>?_method=PUT">
+    <textarea name="note"><%= foundNote.content %></textarea>
+    <input type="submit" value="Update this note" />
+</form>
