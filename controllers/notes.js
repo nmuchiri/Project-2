@@ -43,7 +43,7 @@ router.post('/', isLoggedIn, (req, res) => {
         userId: req.user.id
     })
     .then((createdNote) => {
-      console.log("************************",createdNote)
+      // console.log("************************",createdNote)
       // res.render('notes/show', {createdNote: createdNote.dataValues})
       res.redirect('/notes')
     })
@@ -67,8 +67,8 @@ router.post('/', isLoggedIn, (req, res) => {
   })
   
 router.put('/:id',(req, res) => {
-  console.log('##############', req.body.note)
-  console.log('#################', req.params.id)
+  // console.log('##############', req.body.note)
+  // console.log('#################', req.params.id)
     db.note.update(
          {content: req.body.note},
          {where: {id: req.params.id}}

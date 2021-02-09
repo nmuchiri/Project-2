@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
       // res.send(characters)
     })
     .catch((err)=>{
-      console.log(err)
+      // console.log(err)
     })
   })
 
@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
     db.user.findOne({ where: { id: req.user.id}, include: [db.character]})
 
     .then(user =>{
-      console.log(user.characters)
+      // console.log(user.characters)
       
         res.render('characters/faves', {favorites: user.characters})
 
@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
       // res.send('Render a page of favorites here');
     })
     .catch((error) => {
-      console.log(error)
+      // console.log(error)
     }) 
   })
 
@@ -57,11 +57,11 @@ let episode= [req.body.episode]
     .then(([foundOrCreatedChar, created])=>{
       req.user.addCharacter(foundOrCreatedChar)
       .then(newAssociation=>{
-        console.log(newAssociation)
+        // console.log(newAssociation)
         res.redirect('/characters/faves')  
       }) 
       .catch((error) => {
-        console.log(error)
+        // console.log(error)
       })   
     })
 });
@@ -75,11 +75,11 @@ router.get('/:id',(req, res) => {
       }
     })
     .then((character) => {
-      console.log(character)
+      // console.log(character)
       res.render('characters/show', {character: character })
     })
     .catch((error) => {
-      console.log(error)
+      // console.log(error)
     })
   })
 
@@ -89,7 +89,7 @@ router.delete('/:id',(req, res)=>{
     where: {id:req.params.id}
   })
   .then(numRowsDeleted=>{
-    console.log(numRowsDeleted)
+    // console.log(numRowsDeleted)
     res.redirect('/characters/faves')  
   })
   .catch(err=>{

@@ -9,6 +9,7 @@ const isLoggedIn= require('./middleware/isLoggedIn')
 const axios = require('axios') 
 let db= require ('./models')
 const methodOverride= require('method-override')
+const path= require('path')
 // const character = require('./models/character.js')
 // const user = require('./models/user.js')
 
