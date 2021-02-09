@@ -5,7 +5,7 @@ const isLoggedIn= require('../middleware/isLoggedIn')
 
 
 
-router.get('/', (req, res) => {
+router.get('/',isLoggedIn, (req, res) => {
     db.note.findAll({
       where:{userId: req.user.id},/// find notes where the user id is this user and the character is this character
       //// do an and statement in the query 
